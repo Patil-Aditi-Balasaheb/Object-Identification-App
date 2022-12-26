@@ -1,0 +1,45 @@
+1. Django Project Creation
+
+- created djangoenv environment in anaconda.
+- activated djangoenv using ------->  conda activate djangoenv
+- installed django in djangoenv environment using -------->  conda install -c anaconda django
+
+
+- created a new django project using ------->  django-admin startproject ObjectIdentificationApp
+- then cd ObjectIdentificationApp
+- run the django server using -------> python manage.py runserver
+
+
+- created new app inside the project using ------> python manage.py startapp imgUpload and 
+mentioned it in settings.py inside installed_apps
+- created a folder named templates that will have all the html files and
+mentioned it in settings.py inside templates -> dirs
+
+
+- inside the urls.py added the path for imageupload and redirected it to imageUpload.urls
+- created a new file in imageUpload folder named urls.py and added path for home
+- inside the views.py of the imgUpload app created a home function that renders to the home.html page
+
+
+2. Backend creation using Pretrained keras model - Resnet50
+
+- Tested the Resnet50 imagenet using jupyter notebook and tested it by giving the pug image for prediction
+
+
+3. Adding form to django app and uploading image
+
+- created a form in home.html that take a image file as input
+and created path for imageprocess 
+- created a imageprocess view redirecting to result.html and 
+also created a handle_uploaded_file function that will store/save the uploaded image
+
+- created a forms.py inside the imageUpload folder and created a ImageUploadForm class
+- then we created the object of that class in views.py and checked it validity
+
+
+4. Integrating web application with deep learning backend
+
+- we trained the model again inside the views.py just as we did earlier in step2
+- then we displayed the result on our result.html page
+- after that added some bootstrap for styling
+- created the requirements.txt file using ------>  pip list --format=freeze > requirements.txt
